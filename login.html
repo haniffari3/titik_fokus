@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk - titik fokus</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Login page specific styles */
+    body { 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      min-height: 100vh; 
+      background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+    .login-page { 
+      width: 100%; 
+      max-width: 460px; 
+      margin: 1rem; 
+      background: rgba(255, 255, 255, 0.95); 
+      padding: 2.5rem;
+      border-radius: 20px; 
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      transform: translateY(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .login-page:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+    }
+    .brand { 
+      justify-content: center; 
+      margin-bottom: 2rem;
+      animation: fadeIn 0.8s ease;
+    }
+    .brand .logo { 
+      font-size: 2.5rem; 
+      margin-right: 0.5rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+    .brand .title { 
+      font-size: 1.4rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+    h1 { 
+      font-size: 1.8rem; 
+      text-align: center; 
+      margin: 0 0 2rem;
+      color: #1a1a1a;
+      font-weight: 700;
+    }
+    .login-form input {
+      border: 2px solid #e1e1e1;
+      border-radius: 12px;
+      padding: 0.8rem 1rem;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+    .login-form input:focus {
+      border-color: #6B73FF;
+      box-shadow: 0 0 0 3px rgba(107, 115, 255, 0.2);
+    }
+    .password-field { 
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .password-toggle { 
+      position: absolute; 
+      right: 0.8rem; 
+      top: 50%; 
+      transform: translateY(-50%); 
+      background: none; 
+      border: 0; 
+      padding: 0.4rem; 
+      cursor: pointer; 
+      opacity: 0.6; 
+      transition: all 0.2s ease;
+    }
+    .password-toggle:hover { 
+      opacity: 1;
+      transform: translateY(-50%) scale(1.1);
+    }
+    .password-toggle[data-visible="true"] { 
+      opacity: 0.8;
+      color: #6B73FF;
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(107, 115, 255, 0.3);
+    }
+    .btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(107, 115, 255, 0.4);
+    }
+    .btn.primary:active {
+      transform: translateY(0);
+    }
+    .login-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1rem 0 2rem;
+    }
+    .checkbox input {
+      margin-right: 0.5rem;
+    }
+    .forgot {
+      color: #6B73FF;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .forgot:hover {
+      color: #000DFF;
+      text-decoration: underline;
+    }
+    .alt-actions {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #666;
+    }
+    .alt-actions a {
+      color: #6B73FF;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .alt-actions a:hover {
+      color: #000DFF;
+      text-decoration: underline;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .login-form {
+      animation: fadeIn 0.6s ease;
+    }
+    .form-actions {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-page">
+  <div class="brand">
+    <span class="logo">🏢</span>
+    <span class="title">titik fokus</span>
+  </div>
+
+  <form id="login-form" class="login-form" novalidate>
+    <label for="login-email">Email</label>
+    <input type="email" id="login-email" name="email" required placeholder="email@domain.com">
+
+    <label for="login-password">Kata Sandi</label>
+    <div class="password-field">
+      <input type="password" id="login-password" name="password" required placeholder="Kata sandi">
+      <button type="button" class="password-toggle" aria-label="Tampilkan kata sandi">👁️</button>
+    </div>
+
+    <div class="login-row">
+      <label class="checkbox"><input type="checkbox" id="remember"> Ingat saya</label>
+      <a href="#" class="forgot">Lupa kata sandi?</a>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn primary">Masuk</button>
+    </div>
+
+    <div class="alt-actions">
+      Belum punya akun? <a href="#" id="show-register">Daftar</a>
+    </div>
+  </form>
+
+  <form id="register-form" class="login-form" style="display:none" novalidate>
+    <label for="register-email">Email</label>
+    <input type="email" id="register-email" name="email" required placeholder="email@domain.com">
+
+    <label for="register-password">Kata Sandi</label>
+    <div class="password-field">
+      <input type="password" id="register-password" name="password" required placeholder="Minimal 6 karakter">
+      <button type="button" class="password-toggle" aria-label="Tampilkan kata sandi">👁️</button>
+    </div>
+
+    <label for="register-password-confirm">Konfirmasi Kata Sandi</label>
+    <div class="password-field">
+      <input type="password" id="register-password-confirm" name="password_confirm" required placeholder="Ulangi kata sandi">
+      <button type="button" class="password-toggle" aria-label="Tampilkan kata sandi">👁️</button>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn primary">Buat Akun</button>
+    </div>
+
+    <div class="alt-actions">
+      Sudah punya akun? <a href="#" id="show-login">Masuk</a>
+    </div>
+  </form>
+</div>
+
+<div id="toast" class="toast" aria-live="polite" hidden></div>
+
+<script src="auth.js"></script>
+</body>
+</html>

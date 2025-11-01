@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kantor Modern - titik fokus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="logo">🏢</span>
+        <span class="title">titik fokus</span>
+      </div>
+
+    <div id="auth-area">
+      <button id="login-btn" class="btn login-btn" aria-haspopup="dialog">Masuk</button>
+    </div>
+
+      <nav id="main-nav" class="main-nav">
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#harga">Harga</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="beranda" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Solusi Perkantoran Modern untuk Tim Anda</h1>
+          <p>Meningkatkan produktivitas dengan manajemen dokumen digital, automasi kantor, dan desain ruang kerja ergonomis.</p>
+          <div class="hero-cta">
+            <a href="#layanan" class="btn primary">Lihat Layanan</a>
+            <a href="#kontak" class="btn outline">Hubungi Kami</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="card-visual">
+            <div class="stat">24/7</div>
+            <div class="stat-desc">Dukungan</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tentang" class="section container">
+      <h2>Tentang Kami</h2>
+      <p class="lead">Kami membantu kantor bertransformasi digital dengan solusi praktis dan hemat biaya — dari manajemen dokumen hingga automasi proses kerja.</p>
+      <div class="features">
+        <div class="feature">
+          <h3>Keamanan</h3>
+          <p>Backup & enkripsi untuk data penting perusahaan.</p>
+        </div>
+        <div class="feature">
+          <h3>Integrasi</h3>
+          <p>Menghubungkan tools populer untuk workflow yang mulus.</p>
+        </div>
+        <div class="feature">
+          <h3>Ramah Lingkungan</h3>
+          <p>Optimasi ruang & penggunaan sumber daya yang efisien.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="layanan" class="section alt">
+      <div class="container">
+        <h2>Layanan Kami</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">📁</div>
+            <h3>Manajemen Dokumen</h3>
+            <p>Indexing, pencarian cepat, versi dokumen, dan kontrol akses.</p>
+            <button class="btn small" data-service="Manajemen Dokumen">Pelajari</button>
+          </article>
+
+          <article class="card">
+            <div class="icon">💻</div>
+            <h3>Konsultasi IT</h3>
+            <p>Automasi proses, integrasi sistem, dan support IT.</p>
+            <button class="btn small" data-service="Konsultasi IT">Pelajari</button>
+          </article>
+
+          <article class="card">
+            <div class="icon">🌱</div>
+            <h3>Desain Ruang Kerja</h3>
+            <p>Rangkaian solusi ergonomi & hemat energi untuk kantor modern.</p>
+            <button class="btn small" data-service="Desain Ruang Kerja">Pelajari</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="harga" class="section container">
+      <h2>Paket Harga</h2>
+      <div class="pricing">
+        <div class="price-card">
+          <h4>Dasar</h4>
+          <div class="price">Rp 499.000</div>
+          <p>Manajemen dokumen dasar + support email</p>
+          <button class="btn">Pilih</button>
+        </div>
+        <div class="price-card featured">
+          <h4>Pro</h4>
+          <div class="price">Rp 1.299.000</div>
+          <p>Konsultasi IT + integrasi + support prioritas</p>
+          <button class="btn primary">Pilih</button>
+        </div>
+        <div class="price-card">
+          <h4>Enterprise</h4>
+          <div class="price">Hubungi Kami</div>
+          <p>Solusi kustom, implementasi & training di tempat</p>
+          <button class="btn">Hubungi</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak" class="section alt">
+      <div class="container">
+        <h2>Hubungi Kami</h2>
+        <form id="contact-form" class="contact-grid" novalidate>
+          <input type="text" id="name" placeholder="Nama" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="text" id="subject" placeholder="Subjek (opsional)">
+          <textarea id="message" placeholder="Pesan Anda..." rows="5" required></textarea>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Kirim Pesan</button>
+            <button type="reset" class="btn outline">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2025 Simple Office</div>
+      <div class="socials">
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="LinkedIn">🔗</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" aria-live="polite" hidden></div>
+
+  <!-- Login modal -->
+  <div id="login-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="login-title">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-panel" role="document" aria-modal="true">
+      <button class="modal-close" aria-label="Tutup" data-close>×</button>
+
+      <div class="modal-brand">
+        <!-- simple inline SVG logo for the company -->
+        <svg class="modal-logo" viewBox="0 0 24 24" width="48" height="48" aria-hidden="true">
+          <rect x="2" y="6" width="20" height="14" rx="2" fill="#1e88e5" />
+          <rect x="5" y="9" width="3" height="3" rx="0.5" fill="#fff" />
+          <rect x="10" y="9" width="3" height="3" rx="0.5" fill="#fff" />
+          <rect x="15" y="9" width="3" height="3" rx="0.5" fill="#fff" />
+          <path d="M4 20v-2h16v2" fill="#0b1724" opacity="0.06"/>
+        </svg>
+        <div class="modal-company">
+          <strong>titik fokus</strong>
+          <small>Kantor Modern</small>
+        </div>
+      </div>
+
+      <h3 id="login-title">Masuk ke titik fokus</h3>
+
+      <div class="auth-views">
+        <!-- LOGIN VIEW -->
+        <form id="login-form" class="login-form" data-view="login" novalidate>
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" name="email" required placeholder="email@domain.com">
+
+          <label for="login-password">Kata Sandi</label>
+          <input type="password" id="login-password" name="password" required placeholder="Kata sandi">
+
+          <div class="login-row">
+            <label class="checkbox"><input type="checkbox" id="remember"> Ingat saya</label>
+            <a href="#" class="forgot">Lupa kata sandi?</a>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Masuk</button>
+            <button type="button" class="btn outline" data-close>Batal</button>
+          </div>
+
+          <div class="alt-actions">Belum punya akun? <a href="#" id="to-register">Daftar</a></div>
+        </form>
+
+        <!-- REGISTER VIEW -->
+        <form id="register-form" class="login-form" data-view="register" style="display:none" novalidate>
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" name="email" required placeholder="email@domain.com">
+
+          <label for="register-password">Kata Sandi</label>
+          <input type="password" id="register-password" name="password" required placeholder="Minimal 6 karakter">
+
+          <label for="register-password-confirm">Konfirmasi Kata Sandi</label>
+          <input type="password" id="register-password-confirm" name="password_confirm" required placeholder="Ulangi kata sandi">
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Buat Akun</button>
+            <button type="button" class="btn outline" data-close>Batal</button>
+          </div>
+
+          <div class="alt-actions">Sudah punya akun? <a href="#" id="to-login">Masuk</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -98,46 +98,48 @@
   gap: 3rem;
   position: relative;
 }
-.hero-text {
-  flex: 1;
-  animation: slideUp 0.8s ease-out;
+/* style.css - Hero Section Enhancements */
+
+/* --- Hero Section --- */
+.hero {
+    padding: 6rem 0 5rem; /* Tambah padding atas */
+    background: linear-gradient(135deg, #e0e7ff 0%, #ffffff 100%); /* Gradien yang lebih lembut */
+    border-bottom: 0; /* Hapus border bawah */
+    position: relative;
+    overflow: hidden;
 }
+
 .hero h1 {
-  font-size: 2.5rem;
-  margin: 0 0 1rem;
-  line-height: 1.2;
-  background: linear-gradient(to right, var(--primary-dark), var(--primary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+    font-size: 3rem; /* Perbesar ukuran font */
+    margin: 0 0 1.2rem;
+    line-height: 1.15;
+    /* Pertahankan gradien yang sama */
 }
+
 .lead {
-  color: var(--muted);
-  max-width: 60ch;
-  font-size: 1.1rem;
-  line-height: 1.6;
+    color: #334155; /* Warna muted yang lebih gelap agar mudah dibaca */
+    max-width: 65ch;
+    font-size: 1.15rem; /* Sedikit perbesar font */
+    line-height: 1.7;
 }
-.hero-cta{margin-top:1rem;display:flex;gap:.6rem}
-.btn {
-  display: inline-block;
-  padding: 0.8rem 1.4rem;
-  border-radius: var(--radius);
-  border: 2px solid transparent;
-  background: transparent;
-  cursor: pointer;
-  text-decoration: none;
-  color: #0f172a;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+/* --- Hero Visual Card Enhancement (Stat Card) --- */
+.card-visual {
+    width: 240px; /* Perbesar sedikit */
+    height: 160px;
+    background: var(--glass); /* Memanfaatkan variabel glass */
+    border-radius: 24px; /* Sudut lebih membulat */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.08); /* Bayangan yang lebih dalam */
+    border: 1px solid rgba(255,255,255,0.4); /* Border sedikit transparan */
 }
+
+.stat {
+    font-size: 2.5rem; /* Perbesar stat */
+}
+/* --- CTA Buttons Enhancement --- */
 .btn.primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(79,70,229,0.3);
-  border: none;
+    /* Gradien yang sama, tapi kita bisa beri efek hover yang lebih halus */
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transisi lebih profesional */
 }
 .btn.primary:hover {
   transform: translateY(-2px);
@@ -224,23 +226,16 @@
 .features{display:flex;gap:1rem;margin-top:1rem}
 .feature{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.04);flex:1}
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 2rem;
-  margin-top: 2rem;
+    /* Tetap menggunakan grid 3 kolom */
+    margin-top: 3rem; /* Jarak atas lebih lega */
 }
 .card {
-  background: var(--card);
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(229,231,235,0.8);
-  position: relative;
-  overflow: hidden;
+    background: linear-gradient(180deg, #ffffff 0%, #f9fcff 100%); /* Gradien latar belakang sangat halus */
+    padding: 2.5rem; /* Padding lebih besar */
+    border-radius: 18px; /* Sudut membulat yang elegan */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(230, 237, 245, 0.8); /* Border yang lebih halus */
 }
 .card::before {
   content: '';
@@ -255,92 +250,205 @@
   transition: transform 0.3s ease;
 }
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+    transform: translateY(-8px); /* Gerakan hover yang lebih jelas */
+    box-shadow: 0 15px 35px rgba(79,70,229,0.1), 0 5px 15px rgba(79,70,229,0.05); /* Bayangan berwana */
 }
 .card:hover::before {
   transform: scaleX(1);
 }
 .card .icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+    font-size: 3rem; /* Ikon lebih besar */
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%); /* Gradien yang lebih kontras */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
+/* style.css - Pricing Section Enhancements */
+
+/* --- Pricing Cards (Pricing) --- */
 .pricing {
-  display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
-  perspective: 1000px;
-}
-.price-card {
-  flex: 1;
-  background: var(--card);
-  padding: 2.5rem 2rem;
-  border-radius: var(--radius);
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.4s ease;
-  position: relative;
-  transform-style: preserve-3d;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.7);
-}
-.price-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-}
-.price {
-  font-size: 2rem;
-  font-weight: 800;
-  margin: 1.2rem 0;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-.price-card.featured {
-  padding: 2.5rem 2rem;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: hidden;
-}
-.price-card.featured::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(79,70,229,0.1) 0%, rgba(129,140,248,0.1) 100%);
-  opacity: 0.5;
-}
-.price-card.featured:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-}
-.price-card h4 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
-}
-.price-card h4::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, var(--primary-light), transparent);
+    gap: 1.5rem; /* Jarak antar kartu sedikit dirapatkan */
+    margin-top: 3rem;
 }
 
-/* Contact */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
-.contact-grid textarea{grid-column:1 / -1}
-.form-actions{grid-column:1 / -1;display:flex;gap:.6rem;justify-content:flex-end}
+.price-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fefeff 100%);
+    padding: 3rem 2rem; /* Padding lebih besar */
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid #e2e8f0;
+}
+
+.price-card:hover {
+    transform: translateY(-12px) scale(1.02); /* Efek hover yang lebih dramatis */
+    box-shadow: 0 20px 40px rgba(79,70,229,0.2);
+}
+
+.price {
+    font-size: 2.8rem; /* Harga lebih besar */
+    margin: 1.5rem 0;
+    font-weight: 900;
+}
+
+.price-card.featured {
+    transform: scale(1.05); /* Secara default lebih besar */
+    background: var(--primary); /* Latar belakang utama */
+    color: #fff; /* Teks putih */
+    box-shadow: 0 20px 40px rgba(79,70,229,0.3);
+    border-color: var(--primary-dark);
+}
+
+.price-card.featured h4,
+.price-card.featured .price {
+    color: #fff; /* Teks putih untuk header dan harga */
+    -webkit-text-fill-color: #fff;
+}
+
+.price-card.featured .btn.primary {
+    background: #fff; /* Tombol putih di kartu featured */
+    color: var(--primary-dark);
+    box-shadow: none;
+}
+
+.price-card.featured:hover {
+    transform: translateY(-8px) scale(1.07); /* Hover tetap lebih besar */
+}
+
+/* Penyesuaian kontak form agar terlihat lebih serasi */
+.contact-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f1f5ff 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(79,70,229,0.03) 0%, transparent 50%);
+    animation: rotate 30s linear infinite;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+
+.contact-title h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.02em;
+}
+
+.contact-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--card);
+    padding: 3.5rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(229,231,235,0.8);
+    position: relative;
+    z-index: 1;
+}
+
+.contact-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(79,70,229,0.03) 0%, rgba(129,140,248,0.03) 100%);
+    border-radius: 24px;
+    z-index: -1;
+}
+
+.contact-grid input,
+.contact-grid textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8faff;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.contact-grid input:focus,
+.contact-grid textarea:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+    outline: none;
+    background: #fff;
+}
+
+.contact-grid textarea {
+    grid-column: 1 / -1;
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.form-actions button {
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.form-actions .submit-btn {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border: none;
+}
+
+.form-actions .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79,70,229,0.4);
+}
+
+.form-actions .reset-btn {
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    color: var(--muted);
+}
+
+.form-actions .reset-btn:hover {
+    background: #f8faff;
+    border-color: var(--primary-light);
+    color: var(--primary);
+}
 
 /* Footer */
 .site-footer{padding:1rem 0;border-top:1px solid #e6eef8;background:transparent}

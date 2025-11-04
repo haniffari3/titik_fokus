@@ -1,11 +1,7 @@
 // script.js — modal login behavior, simple validation, toast
 (function(){
-  // Check session first
+  // session key (used for optional auth UI) - do NOT redirect automatically so public pages remain usable
   const SESSION_KEY = 'tf_session';
-  if(!localStorage.getItem(SESSION_KEY)){
-    location.href = 'login.html';
-    return;
-  }
 
   // Elements
   const loginBtn = document.getElementById('login-btn');
@@ -122,8 +118,8 @@
         e.preventDefault();
         destroySession();
         showToast('Anda telah keluar.');
-        // after logout, open the login modal so user can log in again
-        setTimeout(()=>{ openModal('login'); }, 150);
+        // redirect user to the standalone login page after logout
+        setTimeout(()=>{ window.location.href = 'login.html'; }, 250);
       });
     } else {
       // show login button
